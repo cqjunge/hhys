@@ -49,7 +49,7 @@ const props = defineProps({
 });
 const formVisible = ref(false);
 const formData = ref({
-  url: 'http://tv.cqdz.shop/tvbox/pc/pc.json'，
+  url: ''，
   type: 0，
 });
 
@@ -91,26 +91,26 @@ const onSubmit = async () => {
 
     // 添加数据
     const defaultObject = {
-      defaultSite: '',
-      defaultIptv: '',
-      defaultAnalyze: '',
+      defaultSite: ''，
+      defaultIptv: ''，
+      defaultAnalyze: ''，
     };
 
     if (type === 0) {
       if (config.sites) {
-        if (config.sites.data) sites.bulkAdd(config.sites.data);
-        if (config.sites.default) defaultObject.defaultSite = config.sites.default;
+        if (config.sites。data) sites.bulkAdd(config.sites。data);
+        if (config.sites。默认) defaultObject.defaultSite = config.sites。默认;
       }
       if (config.iptv) {
-        if (config.iptv.data) iptv.bulkAdd(config.iptv.data);
-        if (config.iptv.default) {
-          defaultObject.defaultIptv = config.iptv.default;
-          const iptvItem = _.find(config.iptv.data, { id: config.iptv.default });
+        if (config.iptv。data) iptv.bulkAdd(config.iptv。data);
+        if (config.iptv。默认) {
+          defaultObject.defaultIptv = config.iptv。默认;
+          const iptvItem = _.find(config.iptv。data， { id: config.iptv。默认 });
           if (iptvItem) setChannelList(iptvItem.url);
         }
       }
       if (config.analyzes) {
-        if (config.analyzes.data) analyze.bulkAdd(config.analyzes.data);
+        if (config.analyzes。data) analyze.bulkAdd(config.analyzes。data);
         if (config.analyzes.default) defaultObject.defaultAnalyze = config.analyzes.default;
       }
     } else {
