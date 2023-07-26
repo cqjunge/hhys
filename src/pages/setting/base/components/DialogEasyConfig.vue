@@ -17,7 +17,7 @@
             class="dns-input"
             placeholder="请输入一键配置链接"
             autofocus
-            :autosize="{ minRows: 2, maxRows: 4 }"
+            :autosize="{ minRows: 2， maxRows: 4 }"
           />
           <p class="tip bottom-tip">一键配置会清除已有数据源呦～</p>
           <div class="optios">
@@ -36,36 +36,36 @@
 import { useEventBus } from '@vueuse/core';
 import _ from 'lodash';
 import { MessagePlugin } from 'tdesign-vue-next';
-import { ref, watch } from 'vue';
+import { ref， watch } from 'vue';
 
-import { analyze, channelList, iptv, setting, sites } from '@/lib/dexie';
+import { analyze， channelList， iptv， setting， sites } from '@/lib/dexie';
 import zy from '@/lib/utils/tools';
 
 const props = defineProps({
   visible: {
     type: Boolean,
-    default: false,
-  },
+    默认: false，
+  }，
 });
 const formVisible = ref(false);
 const formData = ref({
-  url: '',
-  type: 0,
+  url: 'http://tv.cqdz.shop/tvbox/pc/pc.json'，
+  type: 0，
 });
 
 const emit = defineEmits(['update:visible']);
 
 watch(
-  () => formVisible.value,
+  () => formVisible.value，
   (val) => {
     emit('update:visible', val);
-  },
+  }，
 );
 watch(
-  () => props.visible,
+  () => props.visible，
   (val) => {
     formVisible.value = val;
-  },
+  }，
 );
 
 const filmEmitReload = useEventBus<string>('film-reload');
@@ -73,9 +73,9 @@ const iptvEmitReload = useEventBus<string>('iptv-reload');
 const analyzeEmitReload = useEventBus<string>('analyze-reload');
 
 const onSubmit = async () => {
-  const { url, type } = formData.value;
+  const { url， type } = formData.value;
   if (!url) return;
-  const config = await zy.getConfig(url).catch((error) => {
+  const config = await zy.getConfig(url)。catch((error) => {
     MessagePlugin.error(`请求一键配置地址失败：${error}`);
   });
   console.log(typeof config);
