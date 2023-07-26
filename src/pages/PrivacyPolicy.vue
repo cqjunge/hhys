@@ -16,7 +16,7 @@
       <div class="privacy-policy">
         <div class="header">用户协议与免责声明</div>
         <div class="main-content">
-          <p>感谢您选择使用zyplayer(以下简称本软件),在使用产品和服务之前，请您仔细阅读和理解以下声明:</p>
+          <p>感谢您选择使用涵涵影视(以下简称本软件),在使用产品和服务之前，请您仔细阅读和理解以下声明:</p>
           <p>
             1.若您不同意本声明的任何内容，请您立即停止使用本软件;一旦您开始使用本软件产品和服务，则表示您已同意本声明的所有内容。
           </p>
@@ -40,7 +40,7 @@
 </template>
 <script setup lang="ts">
 import { MessagePlugin } from 'tdesign-vue-next';
-import { ref, watch } from 'vue';
+import { ref， watch } from 'vue';
 
 import { setting } from '@/lib/dexie';
 
@@ -50,22 +50,22 @@ const win = getCurrentWindow();
 const props = defineProps({
   visible: {
     type: Boolean,
-    default: false,
-  },
+    默认: false，
+  }，
 });
 const formVisible = ref(false);
 const emit = defineEmits(['update:visible']);
 watch(
-  () => formVisible.value,
+  () => formVisible.value，
   (val) => {
     emit('update:visible', val);
-  },
+  }，
 );
 watch(
-  () => props.visible,
+  () => props.visible，
   (val) => {
     formVisible.value = val;
-  },
+  }，
 );
 
 const confirmEvent = () => {
@@ -75,15 +75,15 @@ const confirmEvent = () => {
 
 const updateAgreementMask = async () => {
   await setting.update({
-    agreementMask: 'true',
+    agreementMask: 'true'，
   });
 };
 
 const cancelEvent = () => {
-  MessagePlugin.warning({ content: '5s后自动退出软件', duration: 5000 });
+  MessagePlugin.warning({ content: '5s后自动退出软件'， duration: 5000 });
   setTimeout(() => {
     win.destroy();
-  }, 5000);
+  }， 5000);
 };
 </script>
 
