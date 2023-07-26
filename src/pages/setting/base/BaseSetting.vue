@@ -3,12 +3,12 @@
     <t-form ref="form" label-width="110px" :data="formData">
       <t-form-item label="外观" name="theme">
         <t-radio-group v-model="formData.theme">
-          <div v-for="(item, index) in MODE_OPTIONS" :key="index" class="setting-layout-drawer">
+          <div v-for="(item, index) 在 MODE_OPTIONS" :key="index" class="setting-layout-drawer">
             <div>
               <t-radio-button :key="index" :value="item.type">
                 <component :is="getModeIcon(item.type)" class="mode-img" />
               </t-radio-button>
-              <p :style="{ textAlign: 'center', marginTop: '8px' }">{{ item.text }}</p>
+              <p :style="{ textAlign: 'center'， marginTop: '8px' }">{{ item.text }}</p>
             </div>
           </div>
         </t-radio-group>
@@ -130,7 +130,7 @@
           <span class="title" @click="resetEvent">恢复出厂</span>
           <span class="title" @click="resetCache">清理数据</span>
           <span class="title" @click="easyConfig">一键配置</span>
-          <span class="title" @click="checkUpdate">检查更新</span>
+          <!--<span class="title" @click="checkUpdate">检查更新</span>-->
         </t-space>
 
         <dialog-easy-config-view v-model:visible="isEasyConfigDialog" />
@@ -147,7 +147,7 @@ import { useIpcRenderer } from '@vueuse/electron';
 import _ from 'lodash';
 import { CloseIcon } from 'tdesign-icons-vue-next';
 import { MessagePlugin } from 'tdesign-vue-next';
-import { computed, onMounted, ref, watch, watchEffect } from 'vue';
+import { computed， onMounted， ref， watch， watchEffect } from 'vue';
 
 import SettingAutoIcon from '@/assets/assets-setting-auto.svg';
 import SettingDarkIcon from '@/assets/assets-setting-dark.svg';
@@ -155,7 +155,7 @@ import SettingLightIcon from '@/assets/assets-setting-light.svg';
 import { setting } from '@/lib/dexie';
 import db from '@/lib/dexie/dexie';
 import zy from '@/lib/utils/tools';
-import { usePlayStore, useSettingStore } from '@/store';
+import { usePlayStore， useSettingStore } from '@/store';
 
 import DialogClassView from './components/DialogClass.vue';
 import DialogClearView from './components/DialogClear.vue';
@@ -172,23 +172,23 @@ const win = remote.getCurrentWindow();
 const { platform } = process;
 
 const isClassDialog = ref(false);
-const classDialogData = ref({ data: [], type: 'rootClassFilter' });
+const classDialogData = ref({ data: []， type: 'rootClassFilter' });
 const isEasyConfigDialog = ref(false);
 const isUpdateDialog = ref(false);
 const isDnsDialog = ref(false);
 const isClearDialog = ref(false);
-const dnsDialogData = ref({ data: '', type: 'dns' });
+const dnsDialogData = ref({ data: ''， type: 'dns' });
 const isUaDialog = ref(false);
-const uaDialogData = ref({ data: '', type: 'ua' });
+const uaDialogData = ref({ data: ''， type: 'ua' });
 
 const MODE_OPTIONS = [
-  { type: 'light', text: '浅色' },
-  { type: 'dark', text: '深色' },
-  { type: 'auto', text: '跟随系统' },
+  { type: 'light'， text: '浅色' }，
+  { type: 'dark'， text: '深色' }，
+  { type: 'auto'， text: '跟随系统' }，
 ];
 
 const ANALYZE_OPTIONS = [
-  { label: '快捷搜索', value: 'search' },
+  { label: '快捷搜索'， value: 'search' }，
   { label: '支持平台', value: 'platform' },
   { label: '全选', value: 'all' },
 ];
