@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "name": "涵涵TV",
+    "url": "http://tv.cqdz.shop/tvbox/live.txt",
+    "epg": "",
+    "type": "remote",
+    "isActive": true
+  }
+]

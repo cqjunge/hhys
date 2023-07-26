@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "key": "涵涵影视",
+    "name": "涵涵影视",
+    "api": "http://tv.cqdz.shop/api.php/provide/vod/",
+    "type": 1,
+    "search": 1,
+    "playUrl": "",
+    "group": "影视",
+    "isActive": true,
+    "status": true
+  },
+  {
+    "id": 2,
+    "key": "涵涵影视1",
+    "name": "涵涵影视1",
+    "api": "http://vipmv.cc/api.php/provide/vod/",
+    "type": 1,
+    "search": 1,
+    "playUrl": "",
+    "group": "影视",
+    "isActive": true,
+    "status": true
+  },
+  {
+    "key": "xiaomaomi",
+    "name": "官方资源1",
+    "api": "http://zy.xiaomaomi.cc/api.php/provide/vod/",
+    "download": "",
+    "playUrl": "http://139.159.239.156:88/api/?key=Ydj3I8W80PazAaxvXH&url=",
+    "search": 1,
+    "group": "官采",
+    "status": true,
+    "isActive": true,
+    "type": 1,
+    "id": 3
+  },
+  {
+    "key": "ganfan",
+    "name": "官方资源2",
+    "api": "http://124.220.183.81:83/api.php/provide/vod/",
+    "download": "",
+    "playUrl": "",
+    "search": 1,
+    "group": "官采",
+    "status": true,
+    "isActive": true,
+    "type": 1,
+    "id": 4
+  }
+]
