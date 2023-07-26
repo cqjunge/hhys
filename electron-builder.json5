@@ -2,9 +2,9 @@
  * @see https://www.electron.build/configuration/configuration
  */
 {
-  "productName": "zyplayer",
-  "appId": "com.zyplayer.app",
-  "copyright": "Copyright © 2023 zyplayer Team Inc.",
+  "productName": "涵涵影视",
+  "appId": "com.hhys.app",
+  "copyright": "Copyright © 2023 hhys Team Inc.",
   "asar": true,
   "directories": {
     "output": "release/${version}"
